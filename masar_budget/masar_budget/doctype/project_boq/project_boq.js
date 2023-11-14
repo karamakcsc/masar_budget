@@ -25,11 +25,6 @@ frappe.ui.form.on('Project BOQ', {
 frappe.ui.form.on('Project BOQ', {
 	setup: function (frm) {
 		frm.set_query("account_no", "budget_elements", function (doc, cdt, cdn) {
-			// var budget_elements = [];
-
-			// if (doc.budget_elements && doc.budget_elements.length) {
-			// 	budget_elements = doc.budget_elements.map(item => item.cost_center);
-			// }
 
 			return {
 				filters: [
