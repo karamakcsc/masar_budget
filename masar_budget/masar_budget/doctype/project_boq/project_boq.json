@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{project}-{YYYY}-{MM}-{#####}",
+ "creation": "2023-11-12 21:53:47.310885",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "project_name",
+  "fiscal_year",
+  "column_break_nu7nz",
+  "posting_date",
+  "company",
+  "section_break_fxdhm",
+  "budget_elements",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Fiscal Year",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nu7nz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_fxdhm",
+   "fieldtype": "Section Break",
+   "label": "Budget Elements"
+  },
+  {
+   "fieldname": "budget_elements",
+   "fieldtype": "Table",
+   "label": "Budget Elements",
+   "options": "Project BOQ Line"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project BOQ",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-11-12 23:59:47.958278",
+ "modified_by": "Administrator",
+ "module": "Masar Budget",
+ "name": "Project BOQ",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -215,3 +215,12 @@ app_license = "MIT"
 # auth_hooks = [
 #	"masar_budget.auth.validate"
 # ]
+fixtures = [
+    {"dt": "Custom Field", "filters": [
+        [
+            "name", "in", [
+                "Cost Center-custom_is_budget"
+            ]
+        ]
+    ]}
+]
