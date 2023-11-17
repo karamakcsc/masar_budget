@@ -125,7 +125,9 @@ app_license = "MIT"
 #		"on_trash": "method"
 #	}
 # }
-
+doctype_js = {
+   "Cost Center" : "custom/cost_center/cost_center.js",
+ }
 # Scheduled Tasks
 # ---------------
 
@@ -219,8 +221,20 @@ fixtures = [
     {"dt": "Custom Field", "filters": [
         [
             "name", "in", [
-                "Cost Center-custom_is_budget"
+                "Cost Center-custom_is_budget",
+                "Cost Center-custom_budget_account",
+                "Fiscal Year-custom_column_break_xbpvz",
+                "Fiscal Year-custom_budget_year_start_date",
+                "Fiscal Year-custom_budfet_year_end_date",
+                "Fiscal Year-custom_section_break_2l8ey"
             ]
         ]
     ]}
 ]
+
+
+from masar_budget.override import _budget
+from erpnext.accounts.doctype.budget import budget
+
+budget.validate_expense_against_budget = _budget.validate_expense_against_budget
+budget.get_other_condition = _budget.get_other_condition

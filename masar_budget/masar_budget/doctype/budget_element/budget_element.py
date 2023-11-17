@@ -9,8 +9,8 @@ from frappe.model.document import Document
 class BudgetElement(Document):
     def on_submit(self):
         add_budget_list(
-            self.company,  # Assuming self.company is the correct attribute
-            self.name,  # Assuming self.name is the unique identifier for BudgetElement
+            self.company,
+            self.name,
             self.fiscal_year,
             self.account_no,
             self.budget_amount
@@ -18,7 +18,6 @@ class BudgetElement(Document):
 
 @frappe.whitelist()
 def add_budget_list(company, budget_element, fiscal_year, account_no, budget_amount):
-    # Assuming 'accounts' is the child table in the 'Budget' doctype
     entry = {
         "company": company,
         "budget_against": "Budget Element",

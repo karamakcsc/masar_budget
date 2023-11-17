@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{project}/{cost_center}",
+ "autoname": "format:{project}/{cost_center}/{fiscal_year}",
  "creation": "2023-11-12 21:53:01.160373",
  "default_view": "List",
  "doctype": "DocType",
@@ -91,7 +91,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-11-13 00:04:18.551255",
+ "modified": "2023-11-17 22:43:41.139580",
  "modified_by": "Administrator",
  "module": "Masar Budget",
  "name": "Budget Element",

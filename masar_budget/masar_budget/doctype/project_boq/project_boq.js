@@ -14,7 +14,8 @@ frappe.ui.form.on('Project BOQ', {
 			return {
 				filters: [
 					['Cost Center', 'custom_is_budget', '=', 1],
-					['Cost Center', 'name', 'not in', budget_elements]
+					['Cost Center', 'name', 'not in', budget_elements],
+					['Cost Center', 'is_group', '=', 0]
 				]
 			};
 		});
