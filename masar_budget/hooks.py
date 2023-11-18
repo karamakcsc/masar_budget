@@ -225,7 +225,7 @@ fixtures = [
                 "Cost Center-custom_budget_account",
                 "Fiscal Year-custom_column_break_xbpvz",
                 "Fiscal Year-custom_budget_year_start_date",
-                "Fiscal Year-custom_budfet_year_end_date",
+                "Fiscal Year-custom_budget_year_end_date",
                 "Fiscal Year-custom_section_break_2l8ey"
             ]
         ]

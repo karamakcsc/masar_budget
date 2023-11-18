@@ -16,6 +16,4 @@ frappe.ui.form.on('Cost Center', {
 //// Fetching Leave Type with Filter ///// END ///Siam
 
 
-////// Fetching Leave Type with Filter ///// Start ///Siam
-
 

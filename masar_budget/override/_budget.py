@@ -102,11 +102,8 @@ def get_other_condition(args, budget, for_doc):
 	if args.get("fiscal_year"):
 		date_field = "schedule_date" if for_doc == "Material Request" else "transaction_date"
 		start_date, end_date = frappe.db.get_value(
-			"Fiscal Year", args.get("fiscal_year"), ["custom_budget_year_start_date", "custom_budfet_year_end_date"]
+			"Fiscal Year", args.get("fiscal_year"), ["custom_budget_year_start_date", "custom_budget_year_end_date"]
 		)
-		# date_field = "schedule_date" if for_doc == "Material Request" else "transaction_date"
-		# start_date, end_date = '2020-11-18','2024-12-31'
-		# frappe.msgprint("Siam")
 
 		condition += """ and parent.%s
 			between '%s' and '%s' """ % (
