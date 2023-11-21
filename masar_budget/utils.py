@@ -25,8 +25,9 @@ from pypika.terms import ExistsCriterion
 import erpnext
 import masar_budget
 
+
 # imported to enable erpnext.accounts.utils.get_account_currency
-from erpnext.accounts.doctype.account.account import get_account_currency  # noqa
+from erpnext.accounts.doctype.account.account import get_account_currency  ### noqa
 from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import get_dimensions
 from erpnext.stock import get_warehouse_account_map
 from erpnext.stock.utils import get_stock_value_on
