@@ -9,6 +9,7 @@ from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import (
 from erpnext.accounts.doctype.budget.budget import (
 	validate_budget_records,)
 from erpnext.accounts.utils import get_fiscal_year
+from masar_budget.utils import get_budget_year
 
 def validate_expense_against_budget(args, expense_amount=0):
 	args = frappe._dict(args)
@@ -17,7 +18,12 @@ def validate_expense_against_budget(args, expense_amount=0):
 		frappe.flags.exception_approver_role = frappe.get_cached_value(
 			"Company", args.get("company"), "exception_budget_approver_role"
 		)
-
+	args = frappe._dict(args)
+	if args.get("company") and not args.fiscal_year:
+		args.budget_year = get_budget_year(args.get("posting_date"), company=args.get("company"))[0]
+		frappe.flags.exception_approver_role = frappe.get_cached_value(
+			"Company", args.get("company"), "exception_budget_approver_role"
+		)
 	if not args.account:
 		args.account = args.get("expense_account")
 
@@ -99,10 +105,10 @@ def get_other_condition(args, budget, for_doc):
 	if budget_against_field and args.get(budget_against_field):
 		condition += " and child.%s = '%s'" % (budget_against_field, args.get(budget_against_field))
 
-	if args.get("fiscal_year"):
+	if args.get("budget_year"):
 		date_field = "schedule_date" if for_doc == "Material Request" else "transaction_date"
 		start_date, end_date = frappe.db.get_value(
-			"Fiscal Year", args.get("fiscal_year"), ["custom_budget_year_start_date", "custom_budget_year_end_date"]
+			"Project BOQ", args.get("budget_year"), ["budget_year_start_date", "budget_year_end_date"]
 		)
 
 		condition += """ and parent.%s

@@ -222,11 +222,7 @@ fixtures = [
         [
             "name", "in", [
                 "Cost Center-custom_is_budget",
-                "Cost Center-custom_budget_account",
-                "Fiscal Year-custom_column_break_xbpvz",
-                "Fiscal Year-custom_budget_year_start_date",
-                "Fiscal Year-custom_budget_year_end_date",
-                "Fiscal Year-custom_section_break_2l8ey"
+                "Cost Center-custom_budget_account"
             ]
         ]
     ]}

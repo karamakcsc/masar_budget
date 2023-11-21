@@ -11,9 +11,11 @@
   "project",
   "project_name",
   "fiscal_year",
+  "budget_year_start_date",
   "column_break_nu7nz",
   "posting_date",
   "company",
+  "budget_year_end_date",
   "section_break_fxdhm",
   "budget_elements",
   "amended_from"
@@ -78,12 +80,22 @@
    "label": "Project",
    "options": "Project",
    "reqd": 1
+  },
+  {
+   "fieldname": "budget_year_start_date",
+   "fieldtype": "Date",
+   "label": "Budget Year Start Date"
+  },
+  {
+   "fieldname": "budget_year_end_date",
+   "fieldtype": "Date",
+   "label": "Budget Year End Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-11-18 02:08:34.436915",
+ "modified": "2023-11-20 20:36:04.712922",
  "modified_by": "Administrator",
  "module": "Masar Budget",
  "name": "Project BOQ",
