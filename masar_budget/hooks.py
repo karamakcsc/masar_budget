@@ -127,6 +127,8 @@ app_license = "MIT"
 # }
 doctype_js = {
    "Cost Center" : "custom/cost_center/cost_center.js",
+    ######   From Mahmoud 
+    "Purchase Order" : "custom/purchase_order/purchase_order.js"
  }
 # Scheduled Tasks
 # ---------------
@@ -222,7 +224,8 @@ fixtures = [
         [
             "name", "in", [
                 "Cost Center-custom_is_budget",
-                "Cost Center-custom_budget_account"
+                "Cost Center-custom_budget_account",
+                "Purchase Order-custom_order_type",
             ]
         ]
     ]}
