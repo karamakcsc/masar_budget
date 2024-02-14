@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-# from frappe import _, ValidationError
+from frappe import _, ValidationError
 from frappe.utils import flt
 from frappe.model.document import Document
 
