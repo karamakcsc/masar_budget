@@ -5,7 +5,7 @@ frappe.ui.form.on('Cost Center', {
             cur_frm.fields_dict['custom_budget_account'].get_query = function(doc) {
                 return {
                     filters: {
-                        "report_type": "Profit and Loss",
+                        // "report_type": "Profit and Loss",
                         "is_group": 0,
                     }
                 };

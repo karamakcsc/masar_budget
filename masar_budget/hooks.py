@@ -233,7 +233,10 @@ fixtures = [
 
 
 from masar_budget.override import _budget
+from masar_budget.override._budget import _Budget
 from erpnext.accounts.doctype.budget import budget
 
 budget.validate_expense_against_budget = _budget.validate_expense_against_budget
 budget.get_other_condition = _budget.get_other_condition
+budget.validate_accounts = _budget.validate_accounts
+budget.validate = _budget._Budget.validate
