@@ -54,7 +54,7 @@ def validate_expense_against_budget(args, expense_amount=0):
         #     and args.account
         #     and frappe.db.get_value("Account", {"name": args.account, "root_type": "Expense"})
         # ):
-
+##d
         doctype = dimension.get("document_type")
 
         if frappe.get_cached_value("DocType", doctype, "is_tree"):
