@@ -20,19 +20,19 @@ frappe.query_reports["Budget Variance Report-MID"] = {
 			default: frappe.sys_defaults.fiscal_year,
 			reqd: 1
 		},
-		{
-			fieldname: "period",
-			label: __("Period"),
-			fieldtype: "Select",
-			options: [
-				{ "value": "Monthly", "label": __("Monthly") },
-				{ "value": "Quarterly", "label": __("Quarterly") },
-				{ "value": "Half-Yearly", "label": __("Half-Yearly") },
-				{ "value": "Yearly", "label": __("Yearly") }
-			],
-			default: "Yearly",
-			reqd: 1
-		},
+		// {
+		// 	fieldname: "period",
+		// 	label: __("Period"),
+		// 	fieldtype: "Select",
+		// 	options: [
+		// 		{ "value": "Monthly", "label": __("Monthly") },
+		// 		{ "value": "Quarterly", "label": __("Quarterly") },
+		// 		{ "value": "Half-Yearly", "label": __("Half-Yearly") },
+		// 		{ "value": "Yearly", "label": __("Yearly") }
+		// 	],
+		// 	default: "Yearly",
+		// 	reqd: 1
+		// },
 		{
 			fieldname: "company",
 			label: __("Company"),
@@ -45,8 +45,8 @@ frappe.query_reports["Budget Variance Report-MID"] = {
 			fieldname: "budget_against",
 			label: __("Budget Against"),
 			fieldtype: "Select",
-			options: ["Cost Center", "Project", "Budget Element"],
-			default: "Cost Center",
+			options: ["Budget Element"],
+			default: "Budget Element",
 			reqd: 1,
 			on_change: function() {
 				frappe.query_report.set_filter_value("budget_against_filter", []);
@@ -66,12 +66,12 @@ frappe.query_reports["Budget Variance Report-MID"] = {
 				return frappe.db.get_link_options(budget_against, txt);
 			}
 		},
-		{
-			fieldname:"show_cumulative",
-			label: __("Show Cumulative Amount"),
-			fieldtype: "Check",
-			default: 0,
-		},
+		// {
+		// 	fieldname:"show_cumulative",
+		// 	label: __("Show Cumulative Amount"),
+		// 	fieldtype: "Check",
+		// 	default: 0,
+		// },
 	],
 	"formatter": function (value, row, column, data, default_formatter) {
 		value = default_formatter(value, row, column, data);
